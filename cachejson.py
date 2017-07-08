@@ -69,6 +69,6 @@ class CacheJson(object):
 		self.save()
 		return self.raw
 
-URL = 'https://api.github.com/users/schwartzadev'
-obj = CacheJson(URL).json()
-print(obj)
+# URL = 'https://api.github.com/users/schwartzadev'
+# obj = CacheJson(URL).json()
+# print(obj)
