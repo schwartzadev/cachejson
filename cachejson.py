@@ -63,7 +63,6 @@ class CacheJson(object):
 		(Done either by reading from the cache or retrieving from online.)
 		"""
 		if self.file_exists() and not self.update:
-			# print('loading')
 			return self.load()
 
 		self.raw = self.download()
@@ -71,9 +70,5 @@ class CacheJson(object):
 		return self.raw
 
 URL = 'https://api.github.com/users/schwartzadev'
-# print(download())
 obj = CacheJson(URL).json()
 print(obj)
-# print('=============================')
-# print(obj)
-# print(obj[0]['full_name'])
