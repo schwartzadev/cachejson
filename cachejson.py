@@ -45,6 +45,8 @@ class CacheJson(object):
 		"""generate the filename for the saved json file"""
 		self.filename = '{}.json'.format(self.url.translate({
 			ord('/'): '=',
+			ord('?'): '-',
+			ord(':'): '-',
 			ord(':'): '-'
 			}))
 		return self.filename
