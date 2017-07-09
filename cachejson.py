@@ -29,7 +29,7 @@ class CacheJson(object):
 
 	def save(self):
 		"""save JSON data to a file"""
-		with open('{}/{}'.format(self.directory, self.filename), 'w') as out:
+		with open(f'{self.directory}/{self.filename}', 'w') as out:
 			json.dump(self.raw, out)
 
 	def make_cache_directory(self):
@@ -51,11 +51,11 @@ class CacheJson(object):
 
 	def file_exists(self):
 		"""see if this JSON file is already cached"""
-		return os.path.isfile('{}/{}'.format(self.directory, self.filename))
+		return os.path.isfile(f'{self.directory}/{self.filename}')
 
 	def load(self):
 		"""loads JSON from the cached file to an object"""
-		with open('{}/{}'.format(self.directory, self.filename)) as file:
+		with open(f'{self.directory}/{self.filename}') as file:
 			return json.load(file)
 
 	def json(self):
@@ -64,7 +64,6 @@ class CacheJson(object):
 		"""
 		if self.file_exists() and not self.update:
 			return self.load()
-
 		self.raw = self.download()
 		self.save()
 		return self.raw
